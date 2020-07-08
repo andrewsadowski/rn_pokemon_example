@@ -29,11 +29,15 @@ class PokemonList extends React.Component {
   }
 
   _fetchData() {
+    console.log(pokedata)
     const pokemonData = pokedata.map(pokemon => ({
       id: pokemon.id,
       name: pokemon.name,
       image: pokemon.image,
-      types: pokemon.types
+      types: pokemon.types,
+      height: pokemon.height,
+      weight: pokemon.weight,
+      xp: pokemon.base_experience
     }));
     console.log('pokemon data: ', pokemonData)
       
