@@ -7,9 +7,7 @@ import {
   Text
 } from 'react-native'
 import PokemonCard from '../components/PokemonCard'
-import axios from 'axios'
 import pokedata from '../dex.json'
-// import WithLoading from '../components/WithLoading'
 
 class PokemonList extends React.Component {
 
@@ -26,7 +24,7 @@ class PokemonList extends React.Component {
 
     if (!pokemon) {
       this._fetchData()
-      this._loadingTimeout()
+      // this._loadingTimeout()
     }
   }
 
@@ -42,11 +40,12 @@ class PokemonList extends React.Component {
     this.setState({pokemon: pokemonData})
     
   }
-  _loadingTimeout() {
-    return setTimeout(() => {
-      this.setState({loading: false})
-    }, 10000)
-  }
+
+  // _loadingTimeout() {
+  //   return setTimeout(() => {
+  //     this.setState({loading: false})
+  //   }, 10000)
+  // }
 
   render() {
     return (
@@ -54,7 +53,6 @@ class PokemonList extends React.Component {
         <ScrollView contentContainerStyle={ styles.scrollView }>
           {this.state.pokemon && this.state.pokemon.map(pokemon => (
             <PokemonCard
-              loading={this.state.loading}
               key={ pokemon.id }
               pokemon={ pokemon }
               onPress={ () => this.props.navigation.navigate('Detail', { pokemon }) }

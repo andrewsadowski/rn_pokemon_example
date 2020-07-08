@@ -1,5 +1,4 @@
 import React from 'react'
-import WithLoading from '../components/WithLoading'
 import { View, Text } from 'react-native'
 
 /**
