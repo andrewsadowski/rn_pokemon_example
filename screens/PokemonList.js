@@ -9,9 +9,7 @@ import {
 import PokemonCard from '../components/PokemonCard'
 import axios from 'axios'
 import pokedata from '../dex.json'
-import WithLoading from '../components/WithLoading'
-
-const PokeCard = WithLoading(PokemonCard)
+// import WithLoading from '../components/WithLoading'
 
 class PokemonList extends React.Component {
 
@@ -55,7 +53,7 @@ class PokemonList extends React.Component {
       <View style={ styles.container }>
         <ScrollView contentContainerStyle={ styles.scrollView }>
           {this.state.pokemon && this.state.pokemon.map(pokemon => (
-            <PokeCard
+            <PokemonCard
               loading={this.state.loading}
               key={ pokemon.id }
               pokemon={ pokemon }

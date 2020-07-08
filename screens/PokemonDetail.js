@@ -2,17 +2,18 @@ import React from 'react'
 import WithLoading from '../components/WithLoading'
 import { View, Text } from 'react-native'
 
-const PokemonDetail = (props) => {
-  console.log('Props from Pokedetail: ', props)
-  return (
+/**
+ * You can access the props passed to this component at the following path: props.navigation.state.params.pokemon
+ */
 
+const PokemonDetail = (props) => {
+  return (
   <View>
     <Text>Pokemon: </Text>
-    <Text>{props.navigation.state.params.pokemon.name}</Text>
   </View>
   )
 
 }
 
 
-export default WithLoading(PokemonDetail)
+export default PokemonDetail;
